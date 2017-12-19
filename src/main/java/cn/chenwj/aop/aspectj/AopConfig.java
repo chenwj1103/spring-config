@@ -11,7 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @date 2017-12-19 16:24
  **/
 @Configuration
-@ComponentScan("cn.chenwj.aspectj")
+@ComponentScan("cn.chenwj.aop.aspectj")
 @EnableAspectJAutoProxy
 public class AopConfig {
 

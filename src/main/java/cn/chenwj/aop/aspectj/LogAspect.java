@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 public class LogAspect {
 
     //使用pointcut声明切点
-    @Pointcut("@annotation(cn.chenwj.aspectj.Action)")
+    @Pointcut("@annotation(cn.chenwj.aop.aspectj.Action)")
     public void annotationPointCut() {
 
     }
@@ -42,7 +42,7 @@ public class LogAspect {
 
 
     //execution表达式 http://blog.csdn.net/yakoo5/article/details/17001381
-    @Before("execution(* cn.chenwj.aspectj.DemoMethodService.*(..))")
+    @Before("execution(* cn.chenwj.aop.aspectj.DemoMethodService.*(..))")
     public void before(JoinPoint joinPoint) {
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
