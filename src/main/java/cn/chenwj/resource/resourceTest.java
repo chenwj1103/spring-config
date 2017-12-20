@@ -22,12 +22,12 @@ public class resourceTest {
     public static void main(String[] args) throws IOException {
 
 
-        String filePath = "/home/zhuningning/IdeaProjects/masterSpring/chapter4/src/main/resources/config/testResource.txt";
+        String filePath = "/home/zhuningning/IdeaProjects/masterSpring/chapter4/src/main/resources/resourceConfig/testResource.txt";
 
         //使用系统文件路径的方式加载文件
         WritableResource resource1 = new PathResource(filePath);
         //使用类路径的方式加载文件
-        Resource resource2 = new ClassPathResource("config/testResource.txt");
+        Resource resource2 = new ClassPathResource("resourceConfig/testResource.txt");
 
         //使用writableResource接口写文件
         OutputStream outputStream = resource1.getOutputStream();
