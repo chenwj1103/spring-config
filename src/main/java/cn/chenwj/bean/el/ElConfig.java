@@ -20,7 +20,7 @@ import java.io.IOException;
  * @date 2017-12-20 10:47
  **/
 @Configuration
-@PropertySource("classpath:beanConfig/testBean.properties")
+@PropertySource("classpath:beanInit/testBean.properties")
 @ComponentScan("cn.chenwj.bean.el")
 public class ElConfig {
 
@@ -38,7 +38,7 @@ public class ElConfig {
     private double randomNumber;
 
     //注入文件资源
-    @Value("classpath:beanConfig/test.txt")
+    @Value("classpath:beanInit/test.txt")
     private Resource testFile;
 
     //注入网址资源
