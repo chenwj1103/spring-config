@@ -12,10 +12,14 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
 
+    private static final String CAR_INSTANCE = "car";
+
+    private static final int MAX_SPEED = 200;
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 
-        if ("car".equals(beanName)) {
+        if (CAR_INSTANCE.equals(beanName)) {
             Car car = (Car) bean;
             if (car.getColor() == null) {
                 System.out.println("postProcessBeforeInitialization 将color设置为黑色.");
@@ -30,9 +34,9 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 
-        if ("car".equals(beanName)) {
+        if (CAR_INSTANCE.equals(beanName)) {
             Car car = (Car) bean;
-            if (car.getMaxSpeed() > 200) {
+            if (car.getMaxSpeed() > MAX_SPEED) {
                 System.out.println("postProcessAfterInitialization 将MaxSpeed设置为 200.");
                 car.setMaxSpeed(200);
             }

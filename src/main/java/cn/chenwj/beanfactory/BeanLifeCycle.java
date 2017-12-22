@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
  */
 public class BeanLifeCycle {
 
-    private static void LifeCycleInBeanFactory() {
+    private static void lifeCycleInBeanFactory() {
 
         //下面两句装载配置文件并启动容器
         Resource res = new ClassPathResource("beanFactory/beans.xml");
@@ -51,7 +51,7 @@ public class BeanLifeCycle {
 
     public static void main(String[] args) {
 
-        LifeCycleInBeanFactory();
+        lifeCycleInBeanFactory();
     }
 
 

@@ -15,11 +15,13 @@ import java.beans.PropertyDescriptor;
 public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBeanPostProcessorAdapter {
 
 
+    private static final String CAR_INSTANCE = "car";
+
     //在bean实例化前调用
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 
-        if ("car".equals(beanName)) {
+        if (CAR_INSTANCE.equals(beanName)) {
             System.out.println("调用 postProcessBeforeInstantiation方法 -----before");
         }
 
@@ -29,7 +31,7 @@ public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBea
     //在实例化bean后调用
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        if ("car".equals(beanName)) {
+        if (CAR_INSTANCE.equals(beanName)) {
             System.out.println("调用 postProcessAfterInstantiation 方法  -----after");
         }
 
@@ -42,7 +44,7 @@ public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBea
             PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName)
             throws BeansException {
 
-        if ("car".equals(beanName)) {
+        if (CAR_INSTANCE.equals(beanName)) {
             System.out.println("调用 postProcessPropertyValues 方法  -----PropertyValues");
         }
 

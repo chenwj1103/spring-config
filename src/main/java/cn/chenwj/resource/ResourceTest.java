@@ -16,7 +16,7 @@ import java.io.OutputStream;
  * @author chen weijie
  * @date 2017-12-19 1:12 AM
  */
-public class resourceTest {
+public class ResourceTest {
 
 
     public static void main(String[] args) throws IOException {
